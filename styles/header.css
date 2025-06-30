@@ -1,0 +1,78 @@
+header h1 {
+    cursor: pointer;
+}
+
+.ico {
+    height: 40px;
+    width: 40px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #8fb6b5;
+    color: black;
+    font-style: italic;
+    height: 80px;
+    margin: 0px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.dropdown-menu div {
+    display: block;
+    background-color: #8fb6b5;
+    font-size: 18pt;
+    padding: 10px 16px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-card {
+    display: grid;
+    grid-template-rows: auto;
+    gap: 10px;
+    width: 40%;
+    min-width: 400px;
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px solid #A0C1D1;
+    margin: auto;
+}
+
+.text-box {
+    font-size: 26px;
+    border-radius: 25px;
+    padding: 10px;
+
+}
+
+.confirm-button {
+    font-size: 20px;
+    padding: 10px 15px;
+    background-color: #FF8E72;
+    color: black;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    min-width: 200px;
+}
