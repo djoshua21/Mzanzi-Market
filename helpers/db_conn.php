@@ -2,7 +2,7 @@
 <?php
 
 $host = 'localhost';
-$data = 'mzanzi';
+$data = 'mzansi';
 $user = 'mzansi';
 $pass = "Mzansi123";
 // $pass = '';
