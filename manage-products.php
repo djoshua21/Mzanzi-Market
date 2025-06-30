@@ -72,12 +72,21 @@ require 'helpers/db_product_methods.php';
                     </div>
                     <div style="display: grid; grid-template-rows: 1fr; gap: 10px;">
                         <button id="p-edit" onclick="editProduct('$productID', '$title', '$price', '$description');" class="edit-button">Edit Product</button>
-                        <button id="p-remove" onclick="openCard('product_overlay')" class="remove-button">Remove Product</button>
+                        <form method="post" id="remove">
+                            <input type="hidden" id="prodID" name="prodID" value="$productID">
+                            </form>
+                        <button type="submit" name="btn-remove" id="p-remove" onclick="deleteProduct()" class="remove-button">Remove Product</input>
                     </div>
                 </div>
             _END;
         }
 
+
+        if (isset($_POST['prodID'])) {
+            delete_product($_POST['prodID']);
+            unset($_POST['prodID']);
+            header('Location: /manage-products.php');
+        }
 
         ?>
 
@@ -94,6 +103,11 @@ require 'helpers/db_product_methods.php';
     </div>
 </body>
 <script>
+    function deleteProduct() {
+        document.getElementById('remove').submit();
+
+    }
+
     function editProduct(productID, title, price, description) {
         document.getElementById('heading').textContent = 'Edit Product';
 
@@ -114,6 +128,7 @@ require 'helpers/db_product_methods.php';
         document.getElementById('product-title').value = '';
         document.getElementById('product-price').value = '';
         document.getElementById('product-description').value = '';
+
 
         openCard('product_overlay');
     }

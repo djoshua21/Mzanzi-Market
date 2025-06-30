@@ -35,7 +35,17 @@ function update_product($productID, $title, $userID, $description, $price)
 };
 
 
-function delete_product($productID) {};
+function delete_product($productID)
+{
+
+    global $pdo;
+    $stmt = $pdo->prepare("DELETE FROM products WHERE productID = :productID");
+    $stmt->execute([
+        ':productID' => $productID
+    ]);
+
+
+};
 
 function get_product($productID)
 {
